@@ -1,0 +1,159 @@
+snippet dr "jQuery Document ready" b
+$(document).ready(function(){
+	$0	
+});
+endsnippet
+
+snippet .ctrl "Angular Controller" 
+.controller("${1:NameOf}Ctrl", ['$scope', function($scope){
+	$0
+}])
+endsnippet
+
+snippet sc "$scope." 
+$scope.$0
+endsnippet
+
+snippet $ "jQuery selector" 
+\$('${1:selector}').$0
+endsnippet
+
+snippet db "Debug" b
+console.debug("${1:desc}", ${2:var});
+endsnippet
+
+# Comment Blocks
+##############################
+snippet comm-sec "Comment Section"
+//////////////////////////////////////////
+// $1
+//////////////////////////////////////////
+$0
+endsnippet
+
+snippet comm-sub "Comment Subsection"
+/* $1
+*****************************************/
+$0
+endsnippet
+
+# WebApp Constructor Snippets
+##############################
+snippet app-ctor "App Constructor" b
+var app = new $1App(
+	config = {
+		// $1 app configuration
+	},
+	service = new Service();
+	model = new Model();
+);
+
+app.run();
+
+function $1App(config, service, model){
+
+	// public
+	this.run = function(){
+		// app run
+	}
+	
+	// private
+	var config = config;
+	var service = service;
+	var model = model;
+	var helper = new Helper();
+	
+	function Helper(){
+		// $1 app helpers
+	}
+}
+
+$0
+
+function Service(){
+	// $1 service
+}
+endsnippet
+
+snippet scene-ctor "Scene Constructor" b
+function $1Scene(config, service, model){
+	
+	// public
+	this.render = function(){
+		// $1 scene render
+		$0	
+	}
+	
+	// private
+	var config = config;
+	var service = service;
+	var model = model;
+	var helper = new Helper();
+	
+	function Helper(){
+		// $1 scene helpers
+	}
+}
+endsnippet
+
+snippet widget-ctor "Widget Constructor" b
+function $1Widget(config, service, model){
+	
+	// public
+	this.render = function(){
+		// $1 widget render
+		$0
+		
+		eventBinder.bindEvents();
+	}
+	
+	// private
+	var config = config;
+	var service = service;
+	var model = model;
+	var helper = new Helper();
+	var eventBinder = new EventBinder();
+	
+	function Helper(){
+		// $1 widget helpers
+	}
+	
+	function EventBinder(){
+		// $1 widget event binders
+		this.bindEvents = function(){
+			// bind general events
+		};
+	}
+}
+endsnippet
+
+snippet modal-ctor "Modal Constructor" b
+function $1Modal(config, service, model){
+	
+	// public
+	this.render = function(){
+		// $1 screen render
+		$0
+
+		eventBinder.bindEvents();
+	}
+	
+	// private
+	var config = config;
+	var service = service;
+	var model = model;
+	var helper = new Helper();
+	var eventBinder = new EventBinder();
+	
+	function Helper(){
+		// $1 modal helpers
+	}
+	
+	function EventBinder(){
+		// $1 modal event binders
+		this.bindEvents = function(){
+			// bind general events
+		};
+	}
+}
+endsnippet
